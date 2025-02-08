@@ -12,12 +12,13 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 async def chat(request: ChatRequest):
     # 选择模型
-    if request.model_type == "ollama":
-        model = OllamaModel()
-    elif request.model_type == "deepseek":
-        model = DeepseekModel()
-    else:
-        raise HTTPException(status_code=400, detail="不支持的模型类型")
+    # if request.model_type == "ollama":
+    #     model = OllamaModel()
+    # elif request.model_type == "deepseek":
+    #     model = DeepseekModel()
+    # else:
+    #     raise HTTPException(status_code=400, detail="不支持的模型类型")
+    model = OllamaModel()
     
     # 意图处理
     intent_handler = IntentHandler()
